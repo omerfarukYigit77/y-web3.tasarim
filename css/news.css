@@ -1,0 +1,310 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ — HABERLER CSS
+   ========================================= */
+
+.news-section {
+    padding: 70px 40px 80px;
+    background: #ffffff;
+}
+
+/* ---- BÖLÜM BAŞLIĞI ---- */
+.news-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.news-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--clr-red);
+    margin-bottom: 8px;
+}
+
+.news-title-big {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--clr-text);
+    line-height: 1.1;
+}
+
+.news-header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.news-header-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.news-header-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f0f2f5;
+    border: none;
+    color: var(--clr-text);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-header-arrow:hover {
+    background: var(--clr-red);
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(192, 22, 44, 0.3);
+}
+
+.news-all-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--clr-red);
+    font-size: 14px;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid rgba(192,22,44,0.2);
+}
+
+.news-all-link:hover {
+    gap: 14px;
+    border-bottom-color: var(--clr-red);
+}
+
+/* ---- TICKER (KAYAN YAZI) ---- */
+.news-ticker-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--clr-red);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    height: 52px;
+}
+
+.news-ticker-label {
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.ticker-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+.news-ticker-inner {
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.news-ticker-content {
+    display: flex;
+    gap: 80px;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    animation: ticker-scroll 35s linear infinite;
+    padding-left: 30px;
+}
+
+.news-ticker-content span::before {
+    content: "●";
+    margin-right: 12px;
+    font-size: 8px;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+
+.news-ticker-wrap:hover .news-ticker-content {
+    animation-play-state: paused; /* Hover'da duraklar */
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ---- SCROLL OKLAR (Büyük Yüzen Oklar) ---- */
+.news-scroll-container {
+    position: relative;
+}
+
+.news-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* Scrollbar gizle */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.news-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Eski yandan oklar — artık kullanılmıyor */
+.news-arrow { display: none; }
+.news-arrow-prev { display: none; }
+.news-arrow-next { display: none; }
+
+/* Sağ kenar soluk gradient — daha fazla var ipucu */
+.news-scroll-container::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 80px;
+    height: calc(100% - 20px);
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+    pointer-events: none;
+    z-index: 5;
+    border-radius: 0 24px 24px 0;
+}
+
+/* ---- HABER KARTI ---- */
+.news-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.news-card-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.news-card:hover .news-card-img {
+    transform: scale(1.07);
+}
+
+.news-card-img-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.news-card-cat {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--clr-red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.news-card-body {
+    padding: 22px 24px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-card-date {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.news-card-headline {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--clr-text);
+    line-height: 1.45;
+    flex: 1;
+    transition: color 0.3s ease;
+}
+
+.news-card:hover .news-card-headline {
+    color: var(--clr-red);
+}
+
+.news-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--clr-red);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 16px;
+    transition: gap 0.3s ease;
+}
+
+.news-card:hover .news-card-footer {
+    gap: 10px;
+}
+
+/* Eski news-nav — artık kullanılmıyor (oklar kart yanında) */
+.news-nav { display: none; }
+.news-nav-btn { display: none; }
+
+/* Kartların Altında Sağ Köşe Okları */
+.news-bottom-arrows {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}

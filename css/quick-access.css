@@ -1,0 +1,113 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ — HIZLI ERİŞİM (QUICK ACCESS) CSS
+   ========================================= */
+
+.quick-access-section {
+    padding: 60px 40px;
+    background: #f4f6f9; /* Çok hafif grimsi, ferah arka plan */
+    position: relative;
+    /* Slider'ın üzerine doğru hafif taşıralım (Modern görünüm) */
+    margin-top: -50px;
+    z-index: 20;
+    border-radius: 40px 40px 0 0; /* Sadece üst köşeler kavisli */
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.08);
+}
+
+.qa-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.qa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.qa-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(192, 22, 44, 0.05); /* Kırmızımsı çok hafif zemin */
+    color: var(--clr-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 18px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qa-text {
+    color: var(--clr-text);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: color 0.4s ease;
+}
+
+/* Hover Efektleri (Farklı ve Modern Tasarım Dokunuşu) */
+.qa-item:hover {
+    transform: translateY(-12px); /* Yukarı kalkar */
+    box-shadow: 0 20px 40px rgba(192, 22, 44, 0.2); /* Kırmızı gölge */
+    background: var(--clr-red); /* Kart tamamen kırmızı olur */
+    border-color: var(--clr-red);
+}
+
+.qa-item:hover .qa-icon {
+    background: rgba(255, 255, 255, 0.2); /* İkon zemini beyaz/saydam olur */
+    color: #ffffff;
+    transform: scale(1.15) rotate(5deg); /* İkon büyür ve hafifçe döner */
+}
+
+.qa-item:hover .qa-text {
+    color: #ffffff; /* Yazı beyaz olur */
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 1400px) {
+    .qa-grid {
+        gap: 15px;
+    }
+}
+@media (max-width: 1200px) {
+    .qa-grid { 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .qa-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .qa-icon { 
+        width: 55px; height: 55px; font-size: 24px; 
+    }
+    .qa-text { 
+        font-size: 11px; 
+    }
+    .quick-access-section {
+        padding: 40px 20px;
+        border-radius: 25px 25px 0 0;
+    }
+}
+@media (max-width: 576px) {
+    .qa-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}

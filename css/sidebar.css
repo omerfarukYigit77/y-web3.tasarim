@@ -1,0 +1,589 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ — SIDEBAR CSS (AÇIK TEMA)
+   Fotodaki tasarım referans alındı
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---- VARIABLES ---- */
+:root {
+    --sidebar-width: 300px;
+
+    --clr-red:        #C0162C;
+    --clr-red-light:  #f8e8ea;
+    --clr-red-mid:    #e8c0c6;
+
+    --clr-bg:         #f4f5f7;
+    --clr-surface:    #ffffff;
+    --clr-border:     #e4e6ea;
+    --clr-divider:    #eeeff2;
+
+    --clr-text:       #1a1a2e;
+    --clr-text-muted: #5a6270;
+    --clr-text-dim:   #9aa0ab;
+
+    --clr-label:      #9aa0ab;
+
+    --radius-sm: 8px;
+    --radius-md: 10px;
+
+    --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sidebar: 2px 0 16px rgba(0,0,0,0.08);
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Ana İçerik — Sidebar'ın sağındaki alan */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--clr-surface);
+    border-right: 1px solid var(--clr-border);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: var(--shadow-sidebar);
+}
+
+/* ---- LOGO ---- */
+.sidebar-logo {
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid var(--clr-divider);
+    flex-shrink: 0;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.logo-wrapper:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.logo-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--clr-text);
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    letter-spacing: 0.3px;
+    margin-top: 2px;
+}
+
+/* ---- SEARCH ---- */
+.sidebar-search {
+    padding: 14px 16px 10px;
+    flex-shrink: 0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--clr-text-dim);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+#sidebarSearch {
+    width: 100%;
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px 10px 36px;
+    color: var(--clr-text);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    outline: none;
+}
+
+#sidebarSearch::placeholder {
+    color: var(--clr-text-dim);
+}
+
+#sidebarSearch:focus {
+    border-color: var(--clr-red);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(192,22,44,0.1);
+}
+
+/* ---- HIZLI ERİŞİM ---- */
+.quick-links {
+    padding: 4px 14px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 1px solid var(--clr-divider);
+    flex-shrink: 0;
+}
+
+.quick-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.quick-btn i {
+    font-size: 14px;
+}
+
+/* Kırmızı dolu buton (ADAY ÖĞRENCİ) */
+.quick-btn-primary {
+    background: var(--clr-red);
+    color: #fff;
+}
+
+.quick-btn-primary:hover {
+    background: #a01325;
+    color: #fff;
+    transform: translateX(2px);
+    box-shadow: 0 4px 14px rgba(192,22,44,0.3);
+}
+
+/* Düz linkler (ÖĞRENCİ, MEZUN) */
+.quick-btn-secondary {
+    background: transparent;
+    color: var(--clr-text);
+}
+
+.quick-btn-secondary i {
+    color: var(--clr-text-muted);
+}
+
+.quick-btn-secondary:hover {
+    background: var(--clr-bg);
+    color: var(--clr-red);
+    padding-left: 20px;
+}
+
+.quick-btn-secondary:hover i {
+    color: var(--clr-red);
+}
+
+/* ---- NAVİGASYON ---- */
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 0 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-red-mid) transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar { width: 3px; }
+.sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+.sidebar-nav::-webkit-scrollbar-thumb { background: var(--clr-red-mid); border-radius: 4px; }
+
+/* Kategori Etiketi */
+.nav-section-label {
+    padding: 14px 20px 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--clr-label);
+    text-transform: uppercase;
+}
+
+/* Nav Item — hem link hem tıklanabilir div */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 20px;
+    margin: 1px 8px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--clr-text);
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+    position: relative;
+}
+
+.nav-item:hover {
+    background: var(--clr-bg);
+    color: var(--clr-red);
+}
+
+.nav-item:hover .nav-icon {
+    color: var(--clr-red);
+}
+
+/* Aktif öğe */
+.nav-item.active {
+    background: var(--clr-red-light);
+    color: var(--clr-red);
+    font-weight: 600;
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px; bottom: 6px;
+    width: 3px;
+    background: var(--clr-red);
+    border-radius: 0 3px 3px 0;
+    margin-left: -8px;
+}
+
+.nav-item.active .nav-icon {
+    color: var(--clr-red);
+}
+
+/* Açık submenu olan item */
+.nav-item.open {
+    color: var(--clr-red);
+    background: var(--clr-red-light);
+}
+
+.nav-item.open .nav-arrow {
+    transform: rotate(90deg);
+    color: var(--clr-red);
+}
+
+.nav-item.open .nav-icon {
+    color: var(--clr-red);
+}
+
+/* İkonlar */
+.nav-icon {
+    font-size: 17px;
+    color: var(--clr-text-muted);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.nav-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ok işareti */
+.nav-arrow {
+    font-size: 11px;
+    color: var(--clr-text-dim);
+    flex-shrink: 0;
+    transition: transform 0.25s ease, color 0.25s ease;
+    margin-left: auto;
+}
+
+/* ---- SUBMENU (FULL-PAGE MEGA MENU) ---- */
+.submenu {
+    position: fixed;
+    top: 0 !important; /* JS'ten gelen top değerini ezer, tam sayfa olur */
+    left: var(--sidebar-width);
+    width: calc(100vw - var(--sidebar-width));
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.97); /* Cam efekti için hafif saydam */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: none;
+    border-left: 1px solid rgba(0,0,0,0.05);
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 1050;
+    margin: 0;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-30px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    padding: 60px 80px;
+    column-width: 280px; /* Ekrana sığdığı kadar sütun açar */
+    column-gap: 50px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.submenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sub-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--clr-text);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+    break-inside: avoid; /* Sütun bölünmesini engeller */
+    margin-bottom: 4px;
+}
+
+.sub-item i {
+    font-size: 18px;
+    color: var(--clr-text-muted);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.sub-item:hover {
+    color: var(--clr-red);
+    background: rgba(192,22,44,0.05);
+    padding-left: 20px;
+}
+
+.sub-item:hover i {
+    color: var(--clr-red);
+}
+
+/* Alt-grup içindeki girintili item */
+.sub-item-child {
+    padding-left: 25px;
+}
+
+.sub-item-child:hover {
+    padding-left: 30px;
+}
+
+/* Alt-grup başlığı */
+.sub-group-label {
+    padding: 0 0 10px 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--clr-red);
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(192,22,44,0.1);
+    break-after: avoid; /* Altındaki menüden kopmasını engeller */
+    break-before: column; /* Başlıklar her zaman yeni bir sütunun en üstünden başlar */
+}
+
+/* İlk elemanın üstündeki boşluğu al */
+.submenu .sub-group-label:first-child {
+    break-before: auto;
+}
+
+/* ---- FOOTER (SOSYAL + DİL) ---- */
+.sidebar-footer {
+    border-top: 1px solid var(--clr-divider);
+    padding: 12px 16px 16px;
+    flex-shrink: 0;
+}
+
+.sidebar-social {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.social-link {
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    color: var(--clr-text-muted);
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--clr-red);
+    border-color: var(--clr-red);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192,22,44,0.3);
+}
+
+.sidebar-lang {
+    display: flex;
+    gap: 6px;
+}
+
+.lang-btn {
+    flex: 0;
+    padding: 6px 18px;
+    background: transparent;
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    color: var(--clr-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.lang-btn:hover {
+    border-color: var(--clr-red);
+    color: var(--clr-red);
+}
+
+.lang-btn.active {
+    background: var(--clr-red);
+    border-color: var(--clr-red);
+    color: #fff;
+}
+
+/* ---- ANA İÇERİK ---- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    min-height: 100vh;
+    background: var(--clr-bg);
+    padding: 40px;
+}
+
+.content-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.content-placeholder h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 10px;
+}
+
+.content-placeholder p {
+    color: var(--clr-text-muted);
+    font-size: 16px;
+}
+
+/* ---- HAMBURGER (MOBİL) ---- */
+.hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 14px; left: 14px;
+    z-index: 1100;
+    flex-direction: column;
+    gap: 5px;
+    background: var(--clr-red);
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(192,22,44,0.4);
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 20px; height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ---- OVERLAY (MOBİL) ---- */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .sidebar.open { transform: translateX(0); }
+    .hamburger-btn { display: flex; }
+    .main-content { margin-left: 0; padding: 60px 20px 20px; }
+}
+
+/* ---- GİRİŞ ANİMASYONU ---- */
+.nav-item, .quick-btn {
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalova Üniversitesi</title>
+    <meta name="description" content="Yalova Üniversitesi resmi web sitesi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/quick-access.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/announcements.css?v=5">
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- LOGO -->
+        <div class="sidebar-logo">
+            <a href="#" class="logo-wrapper" style="text-decoration: none;">
+                <img src="yeni_logo_transparent.png" alt="Yalova Üniversitesi" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">YALOVA</span>
+                    <span class="logo-sub">ÜNİVERSİTESİ</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- ARAMA -->
+        <div class="sidebar-search">
+            <div class="search-box">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" placeholder="Ara..." id="sidebarSearch">
+            </div>
+        </div>
+
+        <!-- HIZLI ERİŞİM -->
+        <div class="quick-links">
+            <a href="#" class="quick-btn quick-btn-primary" id="btn-aday">
+                <i class="bi bi-person-plus-fill"></i>
+                ADAY ÖĞRENCİ
+            </a>
+            <a href="#" class="quick-btn quick-btn-secondary" id="btn-ogrenci">
+                <i class="bi bi-mortarboard-fill"></i>
+                ÖĞRENCİ
+            </a>
+            <a href="#" class="quick-btn quick-btn-secondary" id="btn-mezun">
+                <i class="bi bi-person-check-fill"></i>
+                MEZUN
+            </a>
+        </div>
+
+        <!-- NAVİGASYON -->
+        <nav class="sidebar-nav" id="sidebarNav">
+
+            <!-- KURUMSAL -->
+            <div class="nav-section-label">KURUMSAL</div>
+
+            <a href="#" class="nav-item active" id="nav-anasayfa">
+                <i class="bi bi-house-fill nav-icon"></i>
+                <span class="nav-text">Anasayfa</span>
+            </a>
+
+            <div class="nav-item has-sub" id="nav-universite" onclick="toggleMenu('universite')">
+                <i class="bi bi-building nav-icon"></i>
+                <span class="nav-text">Üniversitemiz</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-universite"></i>
+            </div>
+            <div class="submenu" id="submenu-universite">
+                <a href="#" class="sub-item"><i class="bi bi-clock-history"></i>Tarihçe</a>
+                <a href="#" class="sub-item"><i class="bi bi-bullseye"></i>Misyon, Vizyon ve Değerlerimiz</a>
+                <a href="#" class="sub-item"><i class="bi bi-diagram-3"></i>Organizasyon Şeması</a>
+                <a href="#" class="sub-item"><i class="bi bi-file-earmark-text"></i>2024-2028 Stratejik Planı</a>
+                <a href="#" class="sub-item"><i class="bi bi-compass"></i>Üniversitemizi Keşfedin</a>
+                <a href="#" class="sub-item"><i class="bi bi-bar-chart"></i>Sayılarla Üniversitemiz</a>
+                <a href="#" class="sub-item"><i class="bi bi-people"></i>İş Birliklerimiz</a>
+                <a href="#" class="sub-item"><i class="bi bi-envelope"></i>E-Bülten</a>
+                <div class="sub-group-label">Komisyonlar</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Bologna Eşgüdüm Komisyonu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Senato Mevzuat Komisyonu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Senato Eğitim Komisyonu</a>
+            </div>
+
+            <div class="nav-item has-sub" id="nav-yonetim" onclick="toggleMenu('yonetim')">
+                <i class="bi bi-diagram-3-fill nav-icon"></i>
+                <span class="nav-text">Yönetim</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-yonetim"></i>
+            </div>
+            <div class="submenu" id="submenu-yonetim">
+                <div class="sub-group-label">Rektörlük</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör Yardımcıları</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör Danışmanları</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Üniversite Senatosu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Üniversite Yönetim Kurulu</a>
+                <div class="sub-group-label">Genel Sekreterlik</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Genel Sekreterlik</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Belge Yönetimi ve Arşiv Müdürlüğü</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Güvenlik Şube Müdürlüğü</a>
+                <div class="sub-group-label">Daire Başkanlıkları</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Bilgi İşlem Daire Başkanlığı</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İdari ve Mali İşler</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Kütüphane ve Dokümantasyon</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Öğrenci İşleri Daire Başkanlığı</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Personel Daire Başkanlığı</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Strateji Geliştirme Daire Başkanlığı</a>
+            </div>
+
+            <!-- AKADEMİK -->
+            <div class="nav-section-label">AKADEMİK</div>
+
+            <div class="nav-item has-sub" id="nav-akademik" onclick="toggleMenu('akademik')">
+                <i class="bi bi-mortarboard nav-icon"></i>
+                <span class="nav-text">Akademik</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-akademik"></i>
+            </div>
+            <div class="submenu" id="submenu-akademik">
+                <div class="sub-group-label">Fakülteler</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Hukuk Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İktisadi ve İdari Bilimler Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İnsan ve Toplum Bilimleri Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İlahiyat Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Mühendislik Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Sağlık Bilimleri Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Sanat ve Tasarım Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Spor Bilimleri Fakültesi</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Tıp Fakültesi</a>
+                <div class="sub-group-label">Enstitüler & Yüksekokullar</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Lisansüstü Eğitim Enstitüsü</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Yabancı Diller Yüksekokulu</a>
+                <div class="sub-group-label">Meslek Yüksekokulları</div>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Altınova Meslek Yüksekokulu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Armutlu Meslek Yüksekokulu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Çınarcık Meslek Yüksekokulu</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Termal Sağlık Hizmetleri MYO</a>
+                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Yalova Meslek Yüksekokulu</a>
+            </div>
+
+            <div class="nav-item has-sub" id="nav-ogrenci-menu" onclick="toggleMenu('ogrenci-menu')">
+                <i class="bi bi-people nav-icon"></i>
+                <span class="nav-text">Öğrenci</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-ogrenci-menu"></i>
+            </div>
+            <div class="submenu" id="submenu-ogrenci-menu">
+                <a href="#" class="sub-item"><i class="bi bi-person-plus"></i>Aday Öğrenciler</a>
+                <a href="#" class="sub-item"><i class="bi bi-calendar3"></i>Akademik Takvim</a>
+                <a href="#" class="sub-item"><i class="bi bi-cup-hot"></i>Aylık Yemek Menüsü</a>
+                <a href="#" class="sub-item"><i class="bi bi-patch-check"></i>Diploma Sorgulama</a>
+                <a href="#" class="sub-item"><i class="bi bi-door-open"></i>Mezun Portalı</a>
+                <a href="#" class="sub-item"><i class="bi bi-pc-display"></i>Öğrenci Bilgi Sistemi</a>
+                <a href="#" class="sub-item"><i class="bi bi-telephone-fill"></i>Telefon Rehberi</a>
+                <a href="#" class="sub-item"><i class="bi bi-house-heart"></i>Yalova'da Yaşam</a>
+                <a href="#" class="sub-item"><i class="bi bi-tree"></i>Yerleşkede Hayat</a>
+            </div>
+
+            <div class="nav-item has-sub" id="nav-arastirma" onclick="toggleMenu('arastirma')">
+                <i class="bi bi-search nav-icon"></i>
+                <span class="nav-text">Araştırma</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-arastirma"></i>
+            </div>
+            <div class="submenu" id="submenu-arastirma">
+                <a href="#" class="sub-item"><i class="bi bi-shield-exclamation"></i>Acil Durum ve Afet Yönetimi Merkezi</a>
+                <a href="#" class="sub-item"><i class="bi bi-heart-pulse"></i>Fizyoterapi ve Rehabilitasyon Merkezi</a>
+                <a href="#" class="sub-item"><i class="bi bi-rocket-takeoff"></i>Girişimcilik Merkezi (YÜGIM)</a>
+                <a href="#" class="sub-item"><i class="bi bi-cpu"></i>Merkezi Araştırma Laboratuvarı</a>
+                <a href="#" class="sub-item"><i class="bi bi-shield-lock"></i>Siber Güvenlik Araştırma Merkezi</a>
+                <a href="#" class="sub-item"><i class="bi bi-mortarboard-fill"></i>Sürekli Eğitim Merkezi (YÜSEM)</a>
+                <a href="#" class="sub-item"><i class="bi bi-translate"></i>Türkçe Öğretimi Merkezi (YTÖMER)</a>
+                <a href="#" class="sub-item"><i class="bi bi-laptop"></i>Uzaktan Eğitim Merkezi (YÜZEM)</a>
+                <a href="#" class="sub-item"><i class="bi bi-arrow-left-right"></i>Teknoloji Transfer Ofisi</a>
+            </div>
+
+            <!-- DİĞER -->
+            <div class="nav-section-label">DİĞER</div>
+
+            <div class="nav-item has-sub" id="nav-kalite" onclick="toggleMenu('kalite')">
+                <i class="bi bi-award nav-icon"></i>
+                <span class="nav-text">Kalite</span>
+                <i class="bi bi-chevron-right nav-arrow" id="arrow-kalite"></i>
+            </div>
+            <div class="submenu" id="submenu-kalite">
+                <a href="#" class="sub-item"><i class="bi bi-door-open"></i>BKYS Giriş</a>
+                <a href="#" class="sub-item"><i class="bi bi-play-circle"></i>BKYS Eğitim Videosu</a>
+                <a href="#" class="sub-item"><i class="bi bi-file-earmark-pdf"></i>BKYS Dokümantasyon</a>
+                <a href="#" class="sub-item"><i class="bi bi-people"></i>Danışma Kurulu</a>
+                <a href="#" class="sub-item"><i class="bi bi-star"></i>Akran Değerlendirme</a>
+                <a href="#" class="sub-item"><i class="bi bi-person-hearts"></i>Kalite Öğrenci Faaliyetleri</a>
+            </div>
+
+            <a href="#" class="nav-item" id="nav-mevzuat">
+                <i class="bi bi-file-text nav-icon"></i>
+                <span class="nav-text">Mevzuat</span>
+            </a>
+
+            <a href="#" class="nav-item" id="nav-iletisim">
+                <i class="bi bi-envelope nav-icon"></i>
+                <span class="nav-text">İletişim</span>
+            </a>
+
+        </nav>
+
+        <!-- SOSYAL MEDYA + DİL -->
+        <div class="sidebar-footer">
+            <div class="sidebar-social">
+                <a href="#" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-link" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="sidebar-lang">
+                <button class="lang-btn active" id="lang-tr">TR</button>
+                <button class="lang-btn" id="lang-en">EN</button>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- Overlay (mobil) -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+    <!-- Hamburger -->
+    <button class="hamburger-btn" id="hamburgerBtn" onclick="openSidebar()">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- ANA İÇERİK -->
+    <main class="main-content" id="mainContent" style="padding: 0;">
+        
+        <!-- HERO SLIDER -->
+        <section class="hero-section">
+            
+            <!-- SLIDE 1 -->
+            <div class="hero-slide">
+                <img src="images/slider1.png" alt="Yalova Üniversitesi Kampüs" class="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Yenilikçi Vizyon</span>
+                    <h1 class="hero-title">Geleceğinize Açılan Kapı</h1>
+                    <p class="hero-desc">Doğayla iç içe modern kampüsümüzde, çağdaş eğitim olanaklarıyla hedeflerinize bir adım daha yaklaşın.</p>
+                    <a href="#" class="hero-btn">
+                        Üniversitemizi Keşfedin <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="hero-slide">
+                <img src="images/slider2.png" alt="Kütüphane ve Öğrenciler" class="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Eğitim & Öğretim</span>
+                    <h1 class="hero-title">Sınırları Aşan Eğitim Anlayışı</h1>
+                    <p class="hero-desc">Güçlü akademik kadromuz ve zengin kütüphanemiz ile bilgiyi sadece öğrenmiyor, aynı zamanda üretiyoruz.</p>
+                    <a href="#" class="hero-btn">
+                        Akademik Programlar <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="hero-slide">
+                <img src="images/slider3.png" alt="Laboratuvar ve Araştırma" class="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">AR-GE ve İnovasyon</span>
+                    <h1 class="hero-title">Bilimin Merkezinde İnovasyon</h1>
+                    <p class="hero-desc">İleri teknoloji laboratuvarlarımızda geleceğin projelerine imza atıyoruz. Araştırma merkezlerimizi inceleyin.</p>
+                    <a href="#" class="hero-btn">
+                        Araştırma Merkezleri <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SLIDER NAVİGASYON (Sağ Taraf) -->
+            <div class="hero-nav">
+                <div class="nav-dot-container">
+                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
+                </div>
+                <div class="nav-dot-container">
+                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
+                </div>
+                <div class="nav-dot-container">
+                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
+                </div>
+            </div>
+
+            <!-- SLIDER OKLARI (Sağ Alt Köşe) -->
+            <div class="hero-arrows">
+                <button class="hero-arrow" id="heroPrev"><i class="bi bi-chevron-left"></i></button>
+                <button class="hero-arrow" id="heroNext"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
+        </section>
+
+        <!-- HIZLI ERİŞİM (QUICK ACCESS) -->
+        <section class="quick-access-section">
+            <div class="qa-grid">
+                <!-- Satır 1 -->
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-laptop"></i></div>
+                    <span class="qa-text">UBS-OBS</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-calendar3"></i></div>
+                    <span class="qa-text">Akademik Takvim</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-book"></i></div>
+                    <span class="qa-text">Kütüphane</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-cpu"></i></div>
+                    <span class="qa-text">Yalova Teknopark</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-person-lines-fill"></i></div>
+                    <span class="qa-text">Rehber</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-globe"></i></div>
+                    <span class="qa-text">Uluslararası Öğrenci</span>
+                </a>
+                
+                <!-- Satır 2 -->
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-person-plus"></i></div>
+                    <span class="qa-text">Aday Öğrenci</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-r-circle"></i></div>
+                    <span class="qa-text">RİMER</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-calendar-event"></i></div>
+                    <span class="qa-text">Etkinlik Takvimi</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-envelope-check"></i></div>
+                    <span class="qa-text">E-Posta Doğrulama</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-camera-video"></i></div>
+                    <span class="qa-text">Tanıtım Filmi</span>
+                </a>
+                <a href="#" class="qa-item">
+                    <div class="qa-icon"><i class="bi bi-people"></i></div>
+                    <span class="qa-text">Erasmus</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- HABERLER -->
+        <section class="news-section">
+            <!-- Başlık + Tüm Haberler linki -->
+            <div class="news-header">
+                <div>
+                    <div class="news-title">GÜNCEL</div>
+                    <div class="news-title-big">Haberler</div>
+                </div>
+                <div class="news-header-right">
+                    <div class="news-header-arrows">
+                        <button class="news-header-arrow" onclick="scrollNews(-1)">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="news-header-arrow" onclick="scrollNews(1)">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="news-all-link">
+                        Tüm Haberler <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Son Dakika Ticker -->
+            <div class="news-ticker-wrap">
+                <div class="news-ticker-label">
+                    <span class="ticker-dot"></span>
+                    SON DAKİKA
+                </div>
+                <div class="news-ticker-inner">
+                    <div class="news-ticker-content" id="tickerContent">
+                        <span>Yalova Üniversitesi 2025-2026 akademik yılı kayıtları başladı</span>
+                        <span>Rektörümüz Uluslararası Konferansta Yalova'yı temsil etti</span>
+                        <span>Mühendislik Fakültesi yeni laboratuvarını açtı</span>
+                        <span>Erasmus+ başvuruları 30 Ağustos'a uzatıldı</span>
+                        <span>Yalova Teknopark'ta yeni iş birliği anlaşması imzalandı</span>
+                        <span>Spor Bilimleri Fakültesi Türkiye Şampiyonası'nda birinci oldu</span>
+                        <!-- Sonsuz döngü için aynı içerikleri tekrarla -->
+                        <span>Yalova Üniversitesi 2025-2026 akademik yılı kayıtları başladı</span>
+                        <span>Rektörümüz Uluslararası Konferansta Yalova'yı temsil etti</span>
+                        <span>Mühendislik Fakültesi yeni laboratuvarını açtı</span>
+                        <span>Erasmus+ başvuruları 30 Ağustos'a uzatıldı</span>
+                        <span>Yalova Teknopark'ta yeni iş birliği anlaşması imzalandı</span>
+                        <span>Spor Bilimleri Fakültesi Türkiye Şampiyonası'nda birinci oldu</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yatay Kaydirilan Haber Kartlari -->
+            <div class="news-scroll-container">
+                <div class="news-track" id="newsTrack">
+
+                    <a href="#" class="news-card">
+                        <div class="news-card-img-wrap">
+                            <img src="images/news1.png" alt="" class="news-card-img">
+                            <span class="news-card-cat">Akademik</span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 3 Ağustos 2026</div>
+                            <div class="news-card-headline">2025-2026 Akademik Yılı Kayıt ve Oryantasyon Programı Tamamlandı</div>
+                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <div class="news-card-img-wrap">
+                            <img src="images/news2.png" alt="" class="news-card-img">
+                            <span class="news-card-cat">Araştırma</span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 2 Ağustos 2026</div>
+                            <div class="news-card-headline">Rektörümüz Uluslararası Akademik İş Birliği Anlaşması İmzaladı</div>
+                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <div class="news-card-img-wrap">
+                            <img src="images/news3.png" alt="" class="news-card-img">
+                            <span class="news-card-cat">Mezuniyet</span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 1 Ağustos 2026</div>
+                            <div class="news-card-headline">2025-2026 Mezuniyet Töreni Çarpıcı Anılarla Yapıldı</div>
+                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <div class="news-card-img-wrap">
+                            <img src="images/news4.png" alt="" class="news-card-img">
+                            <span class="news-card-cat">Spor</span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 31 Temmuz 2026</div>
+                            <div class="news-card-headline">Spor Bilimleri Fakültesi Türkiye Salon Atletizm Şampiyonası'nda Birincilik Kazandı</div>
+                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <div class="news-card-img-wrap">
+                            <img src="images/news1.png" alt="" class="news-card-img">
+                            <span class="news-card-cat">Etkinlik</span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 28 Temmuz 2026</div>
+                            <div class="news-card-headline">Uluslararası Kariyer Fuarı Bu Yıl Da Kapılarını Açıyor</div>
+                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DUYURULAR -->
+        <section class="announcements-section">
+            <div class="ann-header">
+                <div class="ann-header-left">
+                    <h2 class="ann-title">DUYURULAR</h2>
+                    <div class="ann-arrows">
+                        <button class="ann-arrow" onclick="scrollAnnouncements(-1)"><i class="bi bi-chevron-left"></i></button>
+                        <button class="ann-arrow" onclick="scrollAnnouncements(1)"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+                <a href="#" class="ann-all-btn">
+                    <i class="bi bi-caret-right-fill"></i> TÜM DUYURULAR
+                </a>
+            </div>
+
+            <div class="ann-scroll-container">
+                <div class="ann-track" id="annTrack">
+                    <!-- Duyuru 1 -->
+                    <a href="#" class="ann-card">
+                        <div class="ann-date-box">
+                            <span class="ann-day">04</span>
+                            <span class="ann-month">Ağustos</span>
+                        </div>
+                        <div class="ann-content">
+                            <p class="ann-text">2026-2027 Eğitim-Öğretim Yılı Çift Anadal Programı Başvuruları Hakkında Duyuru</p>
+                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </a>
+                    <!-- Duyuru 2 -->
+                    <a href="#" class="ann-card">
+                        <div class="ann-date-box">
+                            <span class="ann-day">03</span>
+                            <span class="ann-month">Ağustos</span>
+                        </div>
+                        <div class="ann-content">
+                            <p class="ann-text">2026-2027 Eğitim-Öğretim Yılı Güz Yarıyılı Kurum İçi ve Kurumlar Arası Yatay Geçiş Başvuruları</p>
+                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </a>
+                    <!-- Duyuru 3 -->
+                    <a href="#" class="ann-card">
+                        <div class="ann-date-box">
+                            <span class="ann-day">01</span>
+                            <span class="ann-month">Ağustos</span>
+                        </div>
+                        <div class="ann-content">
+                            <p class="ann-text">2026-2027 Akademik Yılı Güz Yarıyılı Lisansüstü Programları Başvuru İlanı</p>
+                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </a>
+                    <!-- Duyuru 4 -->
+                    <a href="#" class="ann-card">
+                        <div class="ann-date-box">
+                            <span class="ann-day">28</span>
+                            <span class="ann-month">Temmuz</span>
+                        </div>
+                        <div class="ann-content">
+                            <p class="ann-text">Yalova Üniversitesi 2026-2027 Akademik Takvimi Güncellenmiştir</p>
+                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </a>
+                    <!-- Duyuru 5 -->
+                    <a href="#" class="ann-card">
+                        <div class="ann-date-box">
+                            <span class="ann-day">25</span>
+                            <span class="ann-month">Temmuz</span>
+                        </div>
+                        <div class="ann-content">
+                            <p class="ann-text">Sanat ve Tasarım Fakültesi 2026 Yılı Özel Yetenek Sınavı Kılavuzu ve Başvuru Tarihleri</p>
+                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+        // Haber kartları scroll navigasyonu
+        function scrollNews(dir) {
+            const track = document.getElementById('newsTrack');
+            track.scrollBy({ left: dir * 370, behavior: 'smooth' });
+        }
+
+        // Duyurular scroll navigasyonu
+        function scrollAnnouncements(dir) {
+            const track = document.getElementById('annTrack');
+            track.scrollBy({ left: dir * 460, behavior: 'smooth' });
+        }
+
+        // Duyurular Otomatik Kayma (Auto-play) Efekti
+        document.addEventListener('DOMContentLoaded', function() {
+            const annTrack = document.getElementById('annTrack');
+            let annAutoScroll;
+            
+            function startAnnAutoScroll() {
+                annAutoScroll = setInterval(() => {
+                    if (!annTrack) return;
+                    // Eğer sona ulaştıysak başa dön
+                    if (annTrack.scrollLeft + annTrack.clientWidth >= annTrack.scrollWidth - 10) {
+                        annTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        annTrack.scrollBy({ left: 460, behavior: 'smooth' });
+                    }
+                }, 3500); // 3.5 saniyede bir kayar
+            }
+
+            function stopAnnAutoScroll() {
+                clearInterval(annAutoScroll);
+            }
+
+            if (annTrack) {
+                startAnnAutoScroll();
+                // Mouse üzerine geldiğinde durdur, çekince tekrar başlat
+                annTrack.addEventListener('mouseenter', stopAnnAutoScroll);
+                annTrack.addEventListener('mouseleave', startAnnAutoScroll);
+            }
+        });
+    </script>
+</body>
+</html>
