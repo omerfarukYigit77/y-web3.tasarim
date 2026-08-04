@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/announcements.css?v=5">
     <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/stats.css">
 </head>
 <body>
 
@@ -611,6 +612,72 @@
                 </div>
             </div>
         </section>
+
+        <!-- RAKAMLARLA YALOVA -->
+        <section class="stats-section">
+            <div class="stats-container">
+                
+                <!-- Sol Kısım -->
+                <div class="stats-left">
+                    <div class="stats-subtitle">RAKAMLARLA</div>
+                    <h2 class="stats-title">Yalova'nın <span>Gücü</span></h2>
+                    <p class="stats-desc">2008'den bu yana büyüyen akademik kadromuz, artan öğrenci sayımız ve güçlenen araştırma altyapımızla her yıl daha ileriye gidiyoruz.</p>
+                    <a href="#" class="stats-btn">TÜM İSTATİSTİKLER <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <!-- Sağ Kısım (Kartlar) -->
+                <div class="stats-right">
+                    
+                    <!-- Kart 1 (Kırmızı) -->
+                    <div class="stat-card red-theme">
+                        <div class="stat-deco"></div>
+                        <div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number counter" data-target="18500">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">ÖĞRENCİ SAYISI</div>
+                        <div class="stat-line"><div class="stat-line-fill"></div></div>
+                    </div>
+
+                    <!-- Kart 2 (Turkuaz) -->
+                    <div class="stat-card blue-theme">
+                        <div class="stat-deco"></div>
+                        <div class="stat-icon"><i class="bi bi-person-video3"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number counter" data-target="650">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">AKADEMİK PERSONEL</div>
+                        <div class="stat-line"><div class="stat-line-fill"></div></div>
+                    </div>
+
+                    <!-- Kart 3 (Kırmızı) -->
+                    <div class="stat-card red-theme">
+                        <div class="stat-deco"></div>
+                        <div class="stat-icon"><i class="bi bi-bank2"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number counter" data-target="14">0</span>
+                        </div>
+                        <div class="stat-label">FAKÜLTE & MYO</div>
+                        <div class="stat-line"><div class="stat-line-fill"></div></div>
+                    </div>
+
+                    <!-- Kart 4 (Turkuaz) -->
+                    <div class="stat-card blue-theme">
+                        <div class="stat-deco"></div>
+                        <div class="stat-icon"><i class="bi bi-award-fill"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number counter" data-target="45000">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">MEZUN SAYISI</div>
+                        <div class="stat-line"><div class="stat-line-fill"></div></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         
     </main>
 
@@ -657,6 +724,51 @@
                 annTrack.addEventListener('mouseenter', stopAnnAutoScroll);
                 annTrack.addEventListener('mouseleave', startAnnAutoScroll);
             }
+        });
+
+        // İstatistik Rakam Sayacı (Counter Animation)
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            
+            const animateCounters = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetElement = entry.target;
+                        const targetValue = +targetElement.getAttribute('data-target');
+                        const duration = 2000; // 2 saniye
+                        const frameRate = 1000 / 60; // 60 fps
+                        const totalFrames = Math.round(duration / frameRate);
+                        let currentFrame = 0;
+                        
+                        const counterInterval = setInterval(() => {
+                            currentFrame++;
+                            const progress = currentFrame / totalFrames;
+                            // Easing out cubic
+                            const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                            const currentValue = Math.round(targetValue * easeOutProgress);
+                            
+                            // Sayıyı formatla (örn: 18500 -> 18.500)
+                            targetElement.innerText = currentValue.toLocaleString('tr-TR');
+                            
+                            if (currentFrame >= totalFrames) {
+                                clearInterval(counterInterval);
+                                targetElement.innerText = targetValue.toLocaleString('tr-TR');
+                            }
+                        }, frameRate);
+                        
+                        // Animasyon bittikten sonra izlemeyi bırak
+                        observer.unobserve(targetElement);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateCounters, {
+                threshold: 0.5 // Ekranda %50'si göründüğünde başla
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
         });
     </script>
 </body>
