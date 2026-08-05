@@ -1,0 +1,239 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ - MEGA FOOTER
+   ========================================= */
+
+.site-footer {
+    background-color: #0b162c; /* Çok koyu asil lacivert zemin */
+    color: #9ca3af;
+    font-family: 'Inter', sans-serif;
+    padding: 80px 40px 20px;
+    border-top: 5px solid var(--clr-red); /* Üstte ince kırmızı çizgi */
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Sütun Başlıkları */
+.footer-heading {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #35b5ff; /* Turkuaz Vurgu */
+    border-radius: 3px;
+}
+
+/* Sütun 1: Logo ve İletişim */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    text-decoration: none;
+}
+
+.footer-logo-img {
+    width: 60px;
+}
+
+.footer-logo-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.footer-logo-text span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #35b5ff;
+}
+
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.footer-contact-list i {
+    color: var(--clr-red);
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+/* Sütun 2 ve 3: Menü Linkleri */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Linklerin başındaki küçük ok işareti */
+.footer-links a::before {
+    content: '\F285'; /* Bootstrap Icon: Chevron Right */
+    font-family: 'bootstrap-icons';
+    font-size: 11px;
+    color: #4b5563;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    transform: translateX(5px); /* Üzerine gelince sağa kayma */
+}
+
+.footer-links a:hover::before {
+    color: var(--clr-red); /* Ok kırmızı olur */
+}
+
+/* Sütun 4: Bülten ve Sosyal Medya */
+.footer-newsletter p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.newsletter-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px 0 0 8px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input:focus {
+    border-color: #35b5ff;
+}
+
+.newsletter-btn {
+    background: var(--clr-red);
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 8px 8px 0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #a01022;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--clr-red);
+    transform: translateY(-3px); /* Yukarı kalkma efekti */
+}
+
+/* Alt Bar (Bottom Footer) */
+.footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #35b5ff;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

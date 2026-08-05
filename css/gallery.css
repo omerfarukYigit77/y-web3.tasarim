@@ -1,0 +1,150 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ - KAMPÜSTEN KARELER
+   ========================================= */
+
+.gallery-section {
+    background: #f8f9fa; /* Temiz aydınlık zemin */
+    padding: 80px 40px;
+    position: relative;
+    border-top: 1px solid #eaeaea;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.gallery-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--clr-text);
+    margin: 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.gallery-title::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10%; bottom: 10%;
+    width: 5px;
+    background: var(--clr-red);
+    border-radius: 5px;
+}
+
+.gallery-all-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-all-btn:hover {
+    background: var(--clr-red);
+    color: #fff;
+    border-color: var(--clr-red);
+}
+
+.gallery-accordion {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 600px; /* Galerinin toplam yüksekliği */
+    gap: 15px; /* Fotoğraflar arası boşluk */
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1; /* Varsayılan olarak tüm fotoğraflar eşit genişlikte */
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Alt kısımdaki yarı saydam koyu degrade (yazının okunması için) */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 28, 59, 0.9) 0%, transparent 50%);
+    opacity: 0.6;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutuya bozulmadan sığdırır */
+    transition: filter 0.4s ease, transform 0.6s ease;
+    filter: grayscale(0.6); /* Başlangıçta biraz nostaljik/renksiz */
+}
+
+/* Hover (Akordeon Açılma) Durumu */
+.gallery-item:hover {
+    flex: 4; /* Üzerine gelinen resim diğerlerinden 4 kat geniş olur */
+}
+
+.gallery-item:hover::before {
+    opacity: 1; /* Alt gölge belirginleşir */
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0); /* Tamamen renklenir */
+    transform: scale(1.05); /* Çok hafif bir zoom */
+}
+
+/* İçerik / Metin */
+.gallery-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    z-index: 2;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.2s; /* Metin biraz gecikmeli ve pürüzsüz gelir */
+    white-space: nowrap; /* Metnin kırılmamasını sağlar */
+    overflow: hidden;
+}
+
+.gallery-item:hover .gallery-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.gallery-item-desc {
+    font-size: 15px;
+    color: #35b5ff; /* Orijinal logonun turkuaz rengi */
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 992px) {
+    .gallery-accordion {
+        flex-direction: column;
+        height: 800px;
+    }
+}
