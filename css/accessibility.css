@@ -9,7 +9,7 @@
     right: 30px;
     width: 60px;
     height: 60px;
-    background: #0b162c;
+    background: #C0162C;
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -17,15 +17,15 @@
     justify-content: center;
     font-size: 28px;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(11, 22, 44, 0.3);
+    box-shadow: 0 10px 25px rgba(192, 22, 44, 0.4);
     z-index: 9999;
     transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .a11y-trigger:hover {
     transform: scale(1.1);
-    background: #C0162C;
+    background: #0b162c;
 }
 
 .a11y-panel {
