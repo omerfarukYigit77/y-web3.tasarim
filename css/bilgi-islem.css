@@ -337,7 +337,7 @@ body {
 
 .quick-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 }
 
@@ -458,8 +458,6 @@ body {
 /* ——— RESPONSIVE ——— */
 @media (max-width: 1200px) {
     .quick-grid { grid-template-columns: repeat(3, 1fr); }
-    .stats-container { grid-template-columns: repeat(2, 1fr); }
-    .bidb-slide-content { max-width: 70%; }
     .bidb-slide-visual { display: none; }
     .bidb-slide-content { max-width: 80%; padding: 40px; }
 }
