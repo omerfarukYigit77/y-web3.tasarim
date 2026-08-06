@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/galeri-sayfasi.css">
+    <link rel="stylesheet" href="css/accessibility.css">
 </head>
 <body>
 
@@ -354,8 +355,28 @@
         });
     </script>
     <script src="js/galeri-sayfasi.js"></script>
+    <!-- ERİŞİLEBİLİRLİK MENÜSÜ -->
+    <button class="a11y-trigger" id="a11yTrigger" aria-label="Erişilebilirlik Menüsünü Aç">
+        <i class="bi bi-universal-access"></i>
+    </button>
+    <div class="a11y-panel" id="a11yPanel">
+        <div class="a11y-header">
+            <h3><i class="bi bi-universal-access-circle"></i> Erişilebilirlik</h3>
+            <button class="a11y-close" id="a11yClose"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="a11y-options">
+            <button class="a11y-btn" id="btnHighContrast"><i class="bi bi-circle-half"></i> Yüksek Karşıtlık</button>
+            <button class="a11y-btn" id="btnLargeText"><i class="bi bi-zoom-in"></i> Metni Büyüt</button>
+            <button class="a11y-btn" id="btnReadableFont"><i class="bi bi-fonts"></i> Okunabilir Font</button>
+            <button class="a11y-btn" id="btnHighlightLinks"><i class="bi bi-link-45deg"></i> Bağlantıları Vurgula</button>
+            <button class="a11y-btn" id="btnStopAnimations"><i class="bi bi-pause-circle"></i> Animasyonları Durdur</button>
+            <button class="a11y-btn a11y-reset" id="btnA11yReset"><i class="bi bi-arrow-counterclockwise"></i> Ayarları Sıfırla</button>
+        </div>
+    </div>
+    <script src="js/accessibility.js"></script>
 </body>
 </html>
+
 
 
 

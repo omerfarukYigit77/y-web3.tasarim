@@ -1,0 +1,218 @@
+/* =========================================
+   ERİŞİLEBİLİRLİK (ACCESSIBILITY) CSS
+   ========================================= */
+
+/* --- PANAL VE BUTON TASARIMI --- */
+.a11y-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #0b162c;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(11, 22, 44, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.a11y-trigger:hover {
+    transform: scale(1.1);
+    background: #C0162C;
+}
+
+.a11y-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0,0,0,0.05);
+    z-index: 9998;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.a11y-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.a11y-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.a11y-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0b162c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.a11y-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.a11y-close:hover {
+    color: #C0162C;
+}
+
+.a11y-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.a11y-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.a11y-btn i {
+    font-size: 18px;
+    color: #35b5ff;
+}
+
+.a11y-btn:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.a11y-btn.active {
+    background: #0b162c;
+    color: #fff;
+    border-color: #0b162c;
+}
+
+.a11y-btn.active i {
+    color: #fff;
+}
+
+.a11y-reset {
+    margin-top: 15px;
+    background: #C0162C;
+    color: #fff;
+    justify-content: center;
+    border-color: #C0162C;
+}
+
+.a11y-reset i {
+    color: #fff;
+}
+
+.a11y-reset:hover {
+    background: #a01022;
+}
+
+/* --- ERİŞİLEBİLİRLİK SINIFLARI (BODYA UYGULANIR) --- */
+
+/* 1. Yüksek Karşıtlık (High Contrast) */
+body.a11y-high-contrast, 
+body.a11y-high-contrast * {
+    background-color: #000000 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+}
+body.a11y-high-contrast a,
+body.a11y-high-contrast a * {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+}
+body.a11y-high-contrast img {
+    filter: grayscale(100%) contrast(120%) !important;
+}
+/* A11y menüsünün kendisi yüksek karşıtlıkta bozulmasın */
+body.a11y-high-contrast .a11y-panel, 
+body.a11y-high-contrast .a11y-panel * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/* 2. Metin Büyütme (Large Text) */
+body.a11y-large-text p, 
+body.a11y-large-text span, 
+body.a11y-large-text a, 
+body.a11y-large-text div, 
+body.a11y-large-text li {
+    font-size: 115% !important;
+    line-height: 1.7 !important;
+}
+body.a11y-large-text h1, 
+body.a11y-large-text h2, 
+body.a11y-large-text h3 {
+    font-size: 120% !important;
+}
+
+/* 3. Okunabilir Font (Readable Font) */
+body.a11y-readable-font * {
+    font-family: Arial, Helvetica, sans-serif !important;
+    letter-spacing: 0.5px !important;
+    word-spacing: 2px !important;
+}
+
+/* 4. Bağlantıları Vurgula (Highlight Links) */
+body.a11y-highlight-links a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 3px !important;
+    text-decoration-color: #ffff00 !important;
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 2px 4px !important;
+    border-radius: 4px !important;
+}
+body.a11y-highlight-links .a11y-trigger,
+body.a11y-highlight-links .a11y-btn {
+    text-decoration: none !important;
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* 5. Animasyonları Durdur (Stop Animations) */
+body.a11y-stop-animations *, 
+body.a11y-stop-animations *::before, 
+body.a11y-stop-animations *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+}
