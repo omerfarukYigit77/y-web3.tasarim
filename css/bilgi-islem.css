@@ -455,6 +455,162 @@ body {
 }
 .bidb-footer-right { text-align: right; }
 
+/* ——— DUYURULAR ——— */
+.bidb-announcements {
+    padding: 60px 24px;
+    background: #fff;
+}
+
+.bidb-ann-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bidb-ann-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+.bidb-ann-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bidb-ann-title-wrap i {
+    font-size: 28px;
+    color: var(--red);
+}
+
+.bidb-ann-title-wrap h2 {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.bidb-ann-title-wrap h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--red);
+    border-radius: 3px;
+}
+
+.bidb-ann-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.bidb-ann-all:hover {
+    background: var(--red);
+    color: #fff;
+    gap: 12px;
+}
+
+.bidb-ann-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.bidb-ann-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 16px;
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid #f0f4f8;
+    border-radius: 8px;
+    transition: all 0.25s;
+}
+
+.bidb-ann-item:last-child {
+    border-bottom: none;
+}
+
+.bidb-ann-item:hover {
+    background: #f8faff;
+    padding-left: 24px;
+}
+
+.bidb-ann-item:hover .bidb-ann-arrow {
+    color: var(--red);
+    transform: translateX(4px);
+}
+
+.bidb-ann-date {
+    min-width: 60px;
+    height: 60px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.ann-day {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.ann-month {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--cyan);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.bidb-ann-content {
+    flex: 1;
+}
+
+.bidb-ann-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.bidb-ann-content p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.bidb-ann-arrow {
+    font-size: 16px;
+    color: #d1d5db;
+    transition: all 0.25s;
+    flex-shrink: 0;
+}
+
 /* ——— RESPONSIVE ——— */
 @media (max-width: 1200px) {
     .quick-grid { grid-template-columns: repeat(3, 1fr); }
