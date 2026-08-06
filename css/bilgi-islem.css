@@ -329,7 +329,7 @@ body {
 /* ——— HIZLI ERİŞİM ——— */
 .bidb-quick-access {
     max-width: 1400px;
-    margin: -50px auto 70px;
+    margin: 40px auto 60px;
     padding: 0 24px;
     position: relative;
     z-index: 10;
@@ -337,7 +337,7 @@ body {
 
 .quick-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
@@ -459,6 +459,7 @@ body {
 @media (max-width: 1200px) {
     .quick-grid { grid-template-columns: repeat(3, 1fr); }
     .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .bidb-slide-content { max-width: 70%; }
     .bidb-slide-visual { display: none; }
     .bidb-slide-content { max-width: 80%; padding: 40px; }
 }
@@ -467,6 +468,7 @@ body {
     .mobile-toggle { display: block; }
     .bidb-slide-content h2 { font-size: 32px; }
     .quick-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-container { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 576px) {
     .quick-grid { grid-template-columns: 1fr 1fr; }
