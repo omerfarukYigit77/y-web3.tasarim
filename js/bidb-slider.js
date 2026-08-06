@@ -1,62 +1,38 @@
 // js/bidb-slider.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.bidb-slide');
     const btnNext = document.getElementById('bidbNextBtn');
     const btnPrev = document.getElementById('bidbPrevBtn');
-    
-    if (slides.length === 0) return;
+    const dotsContainer = document.getElementById('sliderDots');
 
-    let currentSlideIndex = 0;
-    let slideInterval;
+    if (!slides.length) return;
 
-    function showSlide(index) {
-        // Remove active class from all
-        slides.forEach(slide => slide.classList.remove('active'));
-        
-        // Handle boundaries
-        if (index >= slides.length) {
-            currentSlideIndex = 0;
-        } else if (index < 0) {
-            currentSlideIndex = slides.length - 1;
-        } else {
-            currentSlideIndex = index;
-        }
-        
-        // Add active class to current
-        slides[currentSlideIndex].classList.add('active');
-    }
+    let current = 0;
+    let timer;
 
-    function nextSlide() {
-        showSlide(currentSlideIndex + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlideIndex - 1);
-    }
-
-    // Event Listeners
-    if (btnNext) btnNext.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
+    // Dot butonlarını oluştur
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsContainer.appendChild(dot);
     });
 
-    if (btnPrev) btnPrev.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-    });
-
-    // Auto Play
-    function startInterval() {
-        slideInterval = setInterval(nextSlide, 5000); // 5 saniyede bir değişir
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        dotsContainer.children[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dotsContainer.children[current].classList.add('active');
     }
 
-    function resetInterval() {
-        clearInterval(slideInterval);
-        startInterval();
-    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+    function resetTimer() { clearInterval(timer); timer = setInterval(next, 5000); }
 
-    // Initialize
-    showSlide(0);
-    startInterval();
+    if (btnNext) btnNext.addEventListener('click', () => { next(); resetTimer(); });
+    if (btnPrev) btnPrev.addEventListener('click', () => { prev(); resetTimer(); });
+
+    goTo(0);
+    timer = setInterval(next, 5000);
 });
