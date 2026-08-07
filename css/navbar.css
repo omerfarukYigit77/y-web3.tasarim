@@ -1,0 +1,385 @@
+/* =========================================
+   YALOVA ÜNİVERSİTESİ — NAVBAR CSS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --navbar-height: 90px;
+    --clr-red:        #C0162C;
+    --clr-red-dark:   #9a1223;
+    --clr-navy:       #0b162c;
+    --clr-bg:         #f4f5f7;
+    --clr-surface:    #ffffff;
+    --clr-border:     #e4e6ea;
+    --clr-text:       #1a1a2e;
+    --clr-text-muted: #5a6270;
+    --transition:     all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    margin: 0;
+    padding: 0;
+    display: block; /* Remove flex from body */
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- TOP BAR --- */
+.top-bar {
+    background: var(--clr-navy);
+    color: #fff;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.top-bar-container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.85;
+    transition: var(--transition);
+}
+
+.top-bar-link:hover {
+    opacity: 1;
+    color: var(--clr-red-mid); /* Optional hover color */
+}
+
+.top-bar-lang {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.lang-option {
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.lang-option.active, .lang-option:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+/* --- NAVBAR WRAPPER --- */
+.main-navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--clr-surface);
+    height: var(--navbar-height);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--clr-red);
+    /* Needed for full-width mega menu positioning */
+    position: relative; 
+}
+
+/* We still want it sticky, so let's use a wrapper if needed. But sticky acts as relative for absolute children. Let's make sure position sticky is kept. */
+.main-navbar {
+    position: sticky;
+}
+
+.navbar-container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- LOGO --- */
+.nav-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo-img {
+    height: 60px;
+}
+
+.nav-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-logo-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--clr-navy);
+    line-height: 1.1;
+}
+
+.nav-logo-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--clr-red);
+    letter-spacing: 0.5px;
+}
+
+/* --- NAVIGATION LINKS --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+}
+
+.nav-link {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--clr-text);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    height: 100%;
+}
+
+.nav-link i {
+    font-size: 16px;
+    color: var(--clr-red);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--clr-red);
+}
+
+/* --- MEGA MENU --- */
+/* Kapsayıcının full-width açılabilmesi için relative'i navbar'a vereceğiz */
+.nav-item-dropdown {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: static; /* Bu sayede mega menü tüm navbar'a göre hizalanır */
+}
+
+.mega-menu {
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    background: var(--clr-surface);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: var(--transition);
+    border-top: 3px solid var(--clr-red);
+    padding: 40px 0;
+    z-index: 1001;
+}
+
+.nav-item-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.mega-col {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mega-col-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--clr-navy);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--clr-divider);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mega-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.mega-link i {
+    color: var(--clr-red);
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition);
+    position: absolute;
+    left: -20px;
+}
+
+.mega-link:hover {
+    color: var(--clr-red);
+    transform: translateX(20px);
+}
+
+.mega-link:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- RIGHT ACTIONS (Quick Links & Search) --- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-quick-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--clr-red);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: var(--clr-red-dark);
+}
+
+.btn-secondary {
+    background: #f0f4f8;
+    color: var(--clr-navy);
+}
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+/* SEARCH */
+.nav-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-search input {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--clr-border);
+    padding: 0 15px 0 40px;
+    font-size: 14px;
+    background: #f8f9fa;
+    transition: var(--transition);
+}
+
+.nav-search input:focus {
+    width: 250px;
+    border-color: var(--clr-red);
+    outline: none;
+    background: #fff;
+}
+
+.nav-search i {
+    position: absolute;
+    left: 15px;
+    color: var(--clr-text-muted);
+    pointer-events: none;
+}
+
+/* --- MOBILE TOGGLE --- */
+.mobile-toggle {
+    display: none;
+    font-size: 28px;
+    color: var(--clr-navy);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* --- MAIN CONTENT ADJUSTMENT --- */
+.main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .nav-search { display: none; }
+    .nav-quick-btn.btn-secondary { display: none; }
+}
+
+@media (max-width: 992px) {
+    .nav-menu { display: none; }
+    .nav-quick-btn { display: none; }
+    .mobile-toggle { display: block; }
+    
+    .nav-menu.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        background: #fff;
+        height: auto;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        align-items: flex-start;
+        overflow-y: auto;
+        max-height: calc(100vh - var(--navbar-height));
+    }
+
+    .nav-item-dropdown { height: auto; flex-direction: column; align-items: flex-start; width: 100%; position: relative; }
+    .mega-menu { position: relative; top: 0; width: 100%; box-shadow: none; border-top: none; padding: 20px 0 0 20px; display: none; transform: none; opacity: 1; visibility: visible; }
+    .nav-item-dropdown.open .mega-menu { display: block; }
+    .mega-menu-container { flex-direction: column; gap: 20px; padding: 0; }
+    .mega-col { gap: 8px; }
+}

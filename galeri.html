@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/quick-access.css">
     <link rel="stylesheet" href="css/news.css">
@@ -24,217 +24,245 @@
 </head>
 <body>
 
-    <!-- ===== SIDEBAR ===== -->
-    <aside class="sidebar" id="sidebar">
-
-        <!-- LOGO -->
-        <div class="sidebar-logo">
-            <a href="index.html" class="logo-wrapper" style="text-decoration: none;">
-                <img src="yeni_logo_transparent.png" alt="Yalova Üniversitesi" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-title">YALOVA</span>
-                    <span class="logo-sub">ÜNİVERSİTESİ</span>
+            <!-- ===== TOP NAVBAR ===== -->
+        <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <a href="#" class="top-bar-link"><i class="bi bi-person-plus"></i> Aday Öğrenci</a>
+            <a href="#" class="top-bar-link"><i class="bi bi-mortarboard"></i> Mezun</a>
+            <a href="#" class="top-bar-link"><i class="bi bi-pc-display"></i> Eğitim Bilgi Sistemi (ÖBS)</a>
+            <div class="top-bar-lang">
+                <a href="#" class="lang-option active">TR</a>
+                <a href="#" class="lang-option">EN</a>
+            </div>
+        </div>
+    </div>
+    <header class="main-navbar">
+        <div class="navbar-container">
+            <!-- LOGO -->
+            <a href="index.html" class="nav-logo-wrapper" style="text-decoration:none;">
+                <img src="yeni_logo_transparent.png" alt="Yalova Üniversitesi" class="nav-logo-img">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">YALOVA</span>
+                    <span class="nav-logo-sub">ÜNİVERSİTESİ</span>
                 </div>
             </a>
-        </div>
 
-        <!-- ARAMA -->
-        <div class="sidebar-search">
-            <div class="search-box">
-                <i class="bi bi-search search-icon"></i>
-                <input type="text" placeholder="Ara..." id="sidebarSearch">
+            <!-- MENU -->
+            <nav class="nav-menu" id="navMenu">
+                <!-- ÜNİVERSİTEMİZ -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Üniversitemiz</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Kurumsal</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Tarihçe</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Misyon, Vizyon ve Değerlerimiz</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Organizasyon Şeması</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> 2024-2028 Stratejik Planı</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Genel Bilgi</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Üniversitemizi Keşfedin</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Sayılarla Üniversitemiz</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Ziyaret Talep Formu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İş Birliklerimiz</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> E-Bülten</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Komisyonlar</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Bologna Eşgüdüm Komisyonu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Senato Mevzuat Komisyonu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Senato Eğitim Komisyonu</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Tanıtım</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Kurumsal Kimlik Rehberi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yerleşke</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Tanıtım Filmi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Sosyal Medya Hesaplarımız</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YÖNETİM -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Yönetim</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Rektörlük</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Rektör</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Rektör Yardımcıları</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Rektör Danışmanları</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Üniversite Senatosu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Üniversite Yönetim Kurulu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İç Denetim Birimi Başkanlığı</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Özel Kalem Müdürlüğü</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Genel Sekreterlik</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Genel Sekreterlik</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Belge Yönetimi ve Arşiv Müd.</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Güvenlik Şube Müd.</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Taşınır İşlemleri Şube Müd.</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yazı İşleri ve Genel Evrak</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Arama Kurtarma Birimi (YÜAK)</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Daire Başkanlıkları</div>
+                                <a href="bilgi-islem.html" class="mega-link"><i class="bi bi-chevron-right"></i> Bilgi İşlem (BİDB)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İdari ve Mali İşler</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Kütüphane ve Dokümantasyon</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Öğrenci İşleri</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Personel Daire Başk.</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> SKS Daire Başkanlığı</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Strateji Geliştirme</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yapı İşleri ve Teknik</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">İdari Birimler</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Döner Sermaye İşletme Müd.</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Enerji Yönetim Birimi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Hukuk Müşavirliği</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Kurumsal İletişim ve Tanıtım</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AKADEMİK -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Akademik</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Fakülteler</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Hukuk Fakültesi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İktisadi ve İdari Bilimler</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İnsan ve Toplum Bilimleri</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İlahiyat Fakültesi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Mühendislik Fakültesi</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Fakülteler (Devamı)</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Sağlık Bilimleri Fakültesi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Sanat ve Tasarım Fakültesi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Spor Bilimleri Fakültesi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Tıp Fakültesi</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Enstitüler & Yüksekokullar</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Lisansüstü Eğitim Enstitüsü</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yabancı Diller Yüksekokulu</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Meslek Yüksekokulları</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Altınova MYO</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Armutlu MYO</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Çınarcık MYO</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Termal Sağlık Hizmetleri MYO</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yalova MYO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARAŞTIRMA -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Araştırma</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Uygulama ve Arş. Merkezleri</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Acil Durum ve Afet Yönetimi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Engelli Çalışmaları</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Fizyoterapi ve Rehabilitasyon</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Girişimcilik ve İşletmecilik (YÜGİM)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Merkezi Araştırma Lab. (YÜMERLAB)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> İslami Çalışmalar</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Uygulama ve Arş. Merkezleri</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Sürekli Eğitim (YÜSEM)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Kadın ve Aile Araştırmaları (YÜKAM)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Siber Güvenlik</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Türkçe Öğretimi (YTÖMER)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Türk Dünyası Çalışmaları</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Teknoloji Transfer Ofisi</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Diğer Birimler</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Uzaktan Eğitim (YÜZEM)</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Uluslararası Öğrenci Koordinasyon</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÖĞRENCİ -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Öğrenci</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Hizmetler</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Aday Öğrenciler</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Akademik Takvim</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Aylık Yemek Menüsü</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Diploma Sorgulama</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Mezun Portalı</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">İletişim & Yaşam</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Öğrenci Bilgi Sistemi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Telefon Rehberi</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yalova'da Yaşam</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Yerleşkede Hayat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KALİTE -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Kalite</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-col">
+                                <div class="mega-col-title">Sistemler</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> BKYS Giriş</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> BKYS Eğitim Videosu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> BKYS Dokümantasyon</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-title">Kurullar</div>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Danışma Kurulu</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Akran Değerlendirme</a>
+                                <a href="#" class="mega-link"><i class="bi bi-chevron-right"></i> Kalite Öğrenci Faaliyetleri</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="nav-link">Mevzuat</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+
+            </nav>
+
+            <!-- ACTIONS -->
+            <div class="nav-actions">
+                <div class="nav-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Ara...">
+                </div>
+                <!-- Sadece arama kaldı, butonlar Topbar'a taşındı -->
+                <button class="mobile-toggle" id="mobileToggle"><i class="bi bi-list"></i></button>
             </div>
         </div>
-
-        <!-- HIZLI ERİŞİM -->
-        <div class="quick-links">
-            <a href="#" class="quick-btn quick-btn-primary" id="btn-aday">
-                <i class="bi bi-person-plus-fill"></i>
-                ADAY ÖĞRENCİ
-            </a>
-            <a href="#" class="quick-btn quick-btn-secondary" id="btn-ogrenci">
-                <i class="bi bi-mortarboard-fill"></i>
-                ÖĞRENCİ
-            </a>
-            <a href="#" class="quick-btn quick-btn-secondary" id="btn-mezun">
-                <i class="bi bi-person-check-fill"></i>
-                MEZUN
-            </a>
-        </div>
-
-        <!-- NAVİGASYON -->
-        <nav class="sidebar-nav" id="sidebarNav">
-
-            <!-- KURUMSAL -->
-            <div class="nav-section-label">KURUMSAL</div>
-
-            <a href="#" class="nav-item active" id="nav-anasayfa">
-                <i class="bi bi-house-fill nav-icon"></i>
-                <span class="nav-text">Anasayfa</span>
-            </a>
-
-            <div class="nav-item has-sub" id="nav-universite" onclick="toggleMenu('universite')">
-                <i class="bi bi-building nav-icon"></i>
-                <span class="nav-text">Üniversitemiz</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-universite"></i>
-            </div>
-            <div class="submenu" id="submenu-universite">
-                <a href="#" class="sub-item"><i class="bi bi-clock-history"></i>Tarihçe</a>
-                <a href="#" class="sub-item"><i class="bi bi-bullseye"></i>Misyon, Vizyon ve Değerlerimiz</a>
-                <a href="#" class="sub-item"><i class="bi bi-diagram-3"></i>Organizasyon Şeması</a>
-                <a href="#" class="sub-item"><i class="bi bi-file-earmark-text"></i>2024-2028 Stratejik Planı</a>
-                <a href="#" class="sub-item"><i class="bi bi-compass"></i>Üniversitemizi Keşfedin</a>
-                <a href="#" class="sub-item"><i class="bi bi-bar-chart"></i>Sayılarla Üniversitemiz</a>
-                <a href="#" class="sub-item"><i class="bi bi-people"></i>İş Birliklerimiz</a>
-                <a href="#" class="sub-item"><i class="bi bi-envelope"></i>E-Bülten</a>
-                <div class="sub-group-label">Komisyonlar</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Bologna Eşgüdüm Komisyonu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Senato Mevzuat Komisyonu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Senato Eğitim Komisyonu</a>
-            </div>
-
-            <div class="nav-item has-sub" id="nav-yonetim" onclick="toggleMenu('yonetim')">
-                <i class="bi bi-diagram-3-fill nav-icon"></i>
-                <span class="nav-text">Yönetim</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-yonetim"></i>
-            </div>
-            <div class="submenu" id="submenu-yonetim">
-                <div class="sub-group-label">Rektörlük</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör Yardımcıları</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Rektör Danışmanları</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Üniversite Senatosu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Üniversite Yönetim Kurulu</a>
-                <div class="sub-group-label">Genel Sekreterlik</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Genel Sekreterlik</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Belge Yönetimi ve Arşiv Müdürlüğü</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Güvenlik Şube Müdürlüğü</a>
-                <div class="sub-group-label">Daire Başkanlıkları</div>
-                <a href="bilgi-islem.html" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Bilgi İşlem Daire Başkanlığı</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İdari ve Mali İşler</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Kütüphane ve Dokümantasyon</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Öğrenci İşleri Daire Başkanlığı</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Personel Daire Başkanlığı</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Strateji Geliştirme Daire Başkanlığı</a>
-            </div>
-
-            <!-- AKADEMİK -->
-            <div class="nav-section-label">AKADEMİK</div>
-
-            <div class="nav-item has-sub" id="nav-akademik" onclick="toggleMenu('akademik')">
-                <i class="bi bi-mortarboard nav-icon"></i>
-                <span class="nav-text">Akademik</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-akademik"></i>
-            </div>
-            <div class="submenu" id="submenu-akademik">
-                <div class="sub-group-label">Fakülteler</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Hukuk Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İktisadi ve İdari Bilimler Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İnsan ve Toplum Bilimleri Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>İlahiyat Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Mühendislik Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Sağlık Bilimleri Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Sanat ve Tasarım Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Spor Bilimleri Fakültesi</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Tıp Fakültesi</a>
-                <div class="sub-group-label">Enstitüler & Yüksekokullar</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Lisansüstü Eğitim Enstitüsü</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Yabancı Diller Yüksekokulu</a>
-                <div class="sub-group-label">Meslek Yüksekokulları</div>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Altınova Meslek Yüksekokulu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Armutlu Meslek Yüksekokulu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Çınarcık Meslek Yüksekokulu</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Termal Sağlık Hizmetleri MYO</a>
-                <a href="#" class="sub-item sub-item-child"><i class="bi bi-dot"></i>Yalova Meslek Yüksekokulu</a>
-            </div>
-
-            <div class="nav-item has-sub" id="nav-ogrenci-menu" onclick="toggleMenu('ogrenci-menu')">
-                <i class="bi bi-people nav-icon"></i>
-                <span class="nav-text">Öğrenci</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-ogrenci-menu"></i>
-            </div>
-            <div class="submenu" id="submenu-ogrenci-menu">
-                <a href="#" class="sub-item"><i class="bi bi-person-plus"></i>Aday Öğrenciler</a>
-                <a href="#" class="sub-item"><i class="bi bi-calendar3"></i>Akademik Takvim</a>
-                <a href="#" class="sub-item"><i class="bi bi-cup-hot"></i>Aylık Yemek Menüsü</a>
-                <a href="#" class="sub-item"><i class="bi bi-patch-check"></i>Diploma Sorgulama</a>
-                <a href="#" class="sub-item"><i class="bi bi-door-open"></i>Mezun Portalı</a>
-                <a href="#" class="sub-item"><i class="bi bi-pc-display"></i>Öğrenci Bilgi Sistemi</a>
-                <a href="#" class="sub-item"><i class="bi bi-telephone-fill"></i>Telefon Rehberi</a>
-                <a href="#" class="sub-item"><i class="bi bi-house-heart"></i>Yalova'da Yaşam</a>
-                <a href="#" class="sub-item"><i class="bi bi-tree"></i>Yerleşkede Hayat</a>
-            </div>
-
-            <div class="nav-item has-sub" id="nav-arastirma" onclick="toggleMenu('arastirma')">
-                <i class="bi bi-search nav-icon"></i>
-                <span class="nav-text">Araştırma</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-arastirma"></i>
-            </div>
-            <div class="submenu" id="submenu-arastirma">
-                <a href="#" class="sub-item"><i class="bi bi-shield-exclamation"></i>Acil Durum ve Afet Yönetimi Merkezi</a>
-                <a href="#" class="sub-item"><i class="bi bi-heart-pulse"></i>Fizyoterapi ve Rehabilitasyon Merkezi</a>
-                <a href="#" class="sub-item"><i class="bi bi-rocket-takeoff"></i>Girişimcilik Merkezi (YÜGIM)</a>
-                <a href="#" class="sub-item"><i class="bi bi-cpu"></i>Merkezi Araştırma Laboratuvarı</a>
-                <a href="#" class="sub-item"><i class="bi bi-shield-lock"></i>Siber Güvenlik Araştırma Merkezi</a>
-                <a href="#" class="sub-item"><i class="bi bi-mortarboard-fill"></i>Sürekli Eğitim Merkezi (YÜSEM)</a>
-                <a href="#" class="sub-item"><i class="bi bi-translate"></i>Türkçe Öğretimi Merkezi (YTÖMER)</a>
-                <a href="#" class="sub-item"><i class="bi bi-laptop"></i>Uzaktan Eğitim Merkezi (YÜZEM)</a>
-                <a href="#" class="sub-item"><i class="bi bi-arrow-left-right"></i>Teknoloji Transfer Ofisi</a>
-            </div>
-
-            <!-- DİĞER -->
-            <div class="nav-section-label">DİĞER</div>
-
-            <div class="nav-item has-sub" id="nav-kalite" onclick="toggleMenu('kalite')">
-                <i class="bi bi-award nav-icon"></i>
-                <span class="nav-text">Kalite</span>
-                <i class="bi bi-chevron-right nav-arrow" id="arrow-kalite"></i>
-            </div>
-            <div class="submenu" id="submenu-kalite">
-                <a href="#" class="sub-item"><i class="bi bi-door-open"></i>BKYS Giriş</a>
-                <a href="#" class="sub-item"><i class="bi bi-play-circle"></i>BKYS Eğitim Videosu</a>
-                <a href="#" class="sub-item"><i class="bi bi-file-earmark-pdf"></i>BKYS Dokümantasyon</a>
-                <a href="#" class="sub-item"><i class="bi bi-people"></i>Danışma Kurulu</a>
-                <a href="#" class="sub-item"><i class="bi bi-star"></i>Akran Değerlendirme</a>
-                <a href="#" class="sub-item"><i class="bi bi-person-hearts"></i>Kalite Öğrenci Faaliyetleri</a>
-            </div>
-
-            <a href="#" class="nav-item" id="nav-mevzuat">
-                <i class="bi bi-file-text nav-icon"></i>
-                <span class="nav-text">Mevzuat</span>
-            </a>
-
-            <a href="#" class="nav-item" id="nav-iletisim">
-                <i class="bi bi-envelope nav-icon"></i>
-                <span class="nav-text">İletişim</span>
-            </a>
-
-        </nav>
-
-        <!-- SOSYAL MEDYA + DİL -->
-        <div class="sidebar-footer">
-            <div class="sidebar-social">
-                <a href="#" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="social-link" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
-                <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            </div>
-            <div class="sidebar-lang">
-                <button class="lang-btn active" id="lang-tr">TR</button>
-                <button class="lang-btn" id="lang-en">EN</button>
-            </div>
-        </div>
-
-    </aside>
-
-    <!-- Overlay (mobil) -->
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-
-    <!-- Hamburger -->
-    <button class="hamburger-btn" id="hamburgerBtn" onclick="openSidebar()">
-        <span></span><span></span><span></span>
-    </button>
+    </header>
 
     <!-- ANA İÇERİK -->
         <main class="main-content" id="mainContent" style="padding: 0;">
@@ -265,7 +293,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/sidebar.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="js/slider.js"></script>
     <script>
         // Haber kartları scroll navigasyonu
@@ -376,6 +404,12 @@
     <script src="js/accessibility.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

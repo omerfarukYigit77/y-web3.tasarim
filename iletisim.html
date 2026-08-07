@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalova Üniversitesi</title>
+    <title>İletişim - Yalova Üniversitesi</title>
     <meta name="description" content="Yalova Üniversitesi resmi web sitesi">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/iletisim.css">
 </head>
 <body>
 
@@ -265,506 +266,104 @@
         </div>
     </header>
 
+        <!-- ===== BREADCRUMB / HERO ===== -->
+    <div class="page-header" style="background: linear-gradient(135deg, var(--clr-navy), var(--clr-red)); padding: 60px 0; color: #fff; text-align: center;">
+        <div class="container">
+            <h1 style="font-weight: 700; margin-bottom: 10px;">İletişim</h1>
+            <p style="opacity: 0.9;">Bizimle iletişime geçmek için aşağıdaki formu kullanabilir veya iletişim bilgilerimizden bize ulaşabilirsiniz.</p>
+        </div>
+    </div>
+
     <!-- ANA İÇERİK -->
-    <main class="main-content" id="mainContent" style="padding: 0;">
-        
-        <!-- HERO SLIDER -->
-        <section class="hero-section">
-            
-            <!-- SLIDE 1 -->
-            <div class="hero-slide">
-                <img src="images/slider1.png" alt="Yalova Üniversitesi Kampüs" class="hero-bg">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <span class="hero-badge">Yenilikçi Vizyon</span>
-                    <h1 class="hero-title">Geleceğinize Açılan Kapı</h1>
-                    <p class="hero-desc">Doğayla iç içe modern kampüsümüzde, çağdaş eğitim olanaklarıyla hedeflerinize bir adım daha yaklaşın.</p>
-                    <a href="#" class="hero-btn">
-                        Üniversitemizi Keşfedin <i class="bi bi-arrow-right"></i>
-                    </a>
+    <main class="container my-5 contact-page-wrapper">
+        <div class="row g-5">
+            <!-- Sol Kolon: İletişim Formu -->
+            <div class="col-lg-7">
+                <div class="contact-form-box">
+                    <h3 class="contact-title">Bize Mesaj Gönderin</h3>
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Adınız Soyadınız <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="name" required placeholder="Örn: Ahmet Yılmaz">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">E-Posta Adresiniz <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" required placeholder="Örn: ahmet@mail.com">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Konu <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="subject" required placeholder="Mesajınızın konusu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="message" rows="5" required placeholder="Lütfen mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn"><i class="bi bi-send"></i> Gönder</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- SLIDE 2 -->
-            <div class="hero-slide">
-                <img src="images/slider2.png" alt="Kütüphane ve Öğrenciler" class="hero-bg">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <span class="hero-badge">Eğitim & Öğretim</span>
-                    <h1 class="hero-title">Sınırları Aşan Eğitim Anlayışı</h1>
-                    <p class="hero-desc">Güçlü akademik kadromuz ve zengin kütüphanemiz ile bilgiyi sadece öğrenmiyor, aynı zamanda üretiyoruz.</p>
-                    <a href="#" class="hero-btn">
-                        Akademik Programlar <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- SLIDE 3 -->
-            <div class="hero-slide">
-                <img src="images/slider3.png" alt="Laboratuvar ve Araştırma" class="hero-bg">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <span class="hero-badge">AR-GE ve İnovasyon</span>
-                    <h1 class="hero-title">Bilimin Merkezinde İnovasyon</h1>
-                    <p class="hero-desc">İleri teknoloji laboratuvarlarımızda geleceğin projelerine imza atıyoruz. Araştırma merkezlerimizi inceleyin.</p>
-                    <a href="#" class="hero-btn">
-                        Araştırma Merkezleri <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- SLIDER NAVİGASYON (Sağ Taraf) -->
-            <div class="hero-nav">
-                <div class="nav-dot-container">
-                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
-                </div>
-                <div class="nav-dot-container">
-                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
-                </div>
-                <div class="nav-dot-container">
-                    <div class="nav-dot"><div class="nav-dot-fill"></div></div>
-                </div>
-            </div>
-
-            <!-- SLIDER OKLARI (Sağ Alt Köşe) -->
-            <div class="hero-arrows">
-                <button class="hero-arrow" id="heroPrev"><i class="bi bi-chevron-left"></i></button>
-                <button class="hero-arrow" id="heroNext"><i class="bi bi-chevron-right"></i></button>
-            </div>
-
-        </section>
-
-        <!-- HIZLI ERİŞİM (QUICK ACCESS) -->
-        <section class="quick-access-section">
-            <div class="qa-grid">
-                <!-- Satır 1 -->
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-laptop"></i></div>
-                    <span class="qa-text">UBS-OBS</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-calendar3"></i></div>
-                    <span class="qa-text">Akademik Takvim</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-book"></i></div>
-                    <span class="qa-text">Kütüphane</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-cpu"></i></div>
-                    <span class="qa-text">Yalova Teknopark</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-person-lines-fill"></i></div>
-                    <span class="qa-text">Rehber</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-globe"></i></div>
-                    <span class="qa-text">Uluslararası Öğrenci</span>
-                </a>
-                
-                <!-- Satır 2 -->
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-person-plus"></i></div>
-                    <span class="qa-text">Aday Öğrenci</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-r-circle"></i></div>
-                    <span class="qa-text">RİMER</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-calendar-event"></i></div>
-                    <span class="qa-text">Etkinlik Takvimi</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-envelope-check"></i></div>
-                    <span class="qa-text">E-Posta Doğrulama</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-camera-video"></i></div>
-                    <span class="qa-text">Tanıtım Filmi</span>
-                </a>
-                <a href="#" class="qa-item">
-                    <div class="qa-icon"><i class="bi bi-people"></i></div>
-                    <span class="qa-text">Erasmus</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- HABERLER -->
-        <section class="news-section">
-            <!-- Başlık + Tüm Haberler linki -->
-            <div class="news-header">
-                <div>
-                    <div class="news-title">GÜNCEL</div>
-                    <div class="news-title-big">Haberler</div>
-                </div>
-                <div class="news-header-right">
-                    <div class="news-header-arrows">
-                        <button class="news-header-arrow" onclick="scrollNews(-1)">
-                            <i class="bi bi-chevron-left"></i>
-                        </button>
-                        <button class="news-header-arrow" onclick="scrollNews(1)">
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                    </div>
-                    <a href="#" class="news-all-link">
-                        Tüm Haberler <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Son Dakika Ticker -->
-            <div class="news-ticker-wrap">
-                <div class="news-ticker-label">
-                    <span class="ticker-dot"></span>
-                    SON DAKİKA
-                </div>
-                <div class="news-ticker-inner">
-                    <div class="news-ticker-content" id="tickerContent">
-                        <span>Yalova Üniversitesi 2025-2026 akademik yılı kayıtları başladı</span>
-                        <span>Rektörümüz Uluslararası Konferansta Yalova'yı temsil etti</span>
-                        <span>Mühendislik Fakültesi yeni laboratuvarını açtı</span>
-                        <span>Erasmus+ başvuruları 30 Ağustos'a uzatıldı</span>
-                        <span>Yalova Teknopark'ta yeni iş birliği anlaşması imzalandı</span>
-                        <span>Spor Bilimleri Fakültesi Türkiye Şampiyonası'nda birinci oldu</span>
-                        <!-- Sonsuz döngü için aynı içerikleri tekrarla -->
-                        <span>Yalova Üniversitesi 2025-2026 akademik yılı kayıtları başladı</span>
-                        <span>Rektörümüz Uluslararası Konferansta Yalova'yı temsil etti</span>
-                        <span>Mühendislik Fakültesi yeni laboratuvarını açtı</span>
-                        <span>Erasmus+ başvuruları 30 Ağustos'a uzatıldı</span>
-                        <span>Yalova Teknopark'ta yeni iş birliği anlaşması imzalandı</span>
-                        <span>Spor Bilimleri Fakültesi Türkiye Şampiyonası'nda birinci oldu</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Yatay Kaydirilan Haber Kartlari -->
-            <div class="news-scroll-container">
-                <div class="news-track" id="newsTrack">
-
-                    <a href="#" class="news-card">
-                        <div class="news-card-img-wrap">
-                            <img src="images/news1.png" alt="" class="news-card-img">
-                            <span class="news-card-cat">Akademik</span>
-                        </div>
-                        <div class="news-card-body">
-                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 3 Ağustos 2026</div>
-                            <div class="news-card-headline">2025-2026 Akademik Yılı Kayıt ve Oryantasyon Programı Tamamlandı</div>
-                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="news-card">
-                        <div class="news-card-img-wrap">
-                            <img src="images/news2.png" alt="" class="news-card-img">
-                            <span class="news-card-cat">Araştırma</span>
-                        </div>
-                        <div class="news-card-body">
-                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 2 Ağustos 2026</div>
-                            <div class="news-card-headline">Rektörümüz Uluslararası Akademik İş Birliği Anlaşması İmzaladı</div>
-                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="news-card">
-                        <div class="news-card-img-wrap">
-                            <img src="images/news3.png" alt="" class="news-card-img">
-                            <span class="news-card-cat">Mezuniyet</span>
-                        </div>
-                        <div class="news-card-body">
-                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 1 Ağustos 2026</div>
-                            <div class="news-card-headline">2025-2026 Mezuniyet Töreni Çarpıcı Anılarla Yapıldı</div>
-                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="news-card">
-                        <div class="news-card-img-wrap">
-                            <img src="images/news4.png" alt="" class="news-card-img">
-                            <span class="news-card-cat">Spor</span>
-                        </div>
-                        <div class="news-card-body">
-                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 31 Temmuz 2026</div>
-                            <div class="news-card-headline">Spor Bilimleri Fakültesi Türkiye Salon Atletizm Şampiyonası'nda Birincilik Kazandı</div>
-                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="news-card">
-                        <div class="news-card-img-wrap">
-                            <img src="images/news1.png" alt="" class="news-card-img">
-                            <span class="news-card-cat">Etkinlik</span>
-                        </div>
-                        <div class="news-card-body">
-                            <div class="news-card-date"><i class="bi bi-calendar3"></i> 28 Temmuz 2026</div>
-                            <div class="news-card-headline">Uluslararası Kariyer Fuarı Bu Yıl Da Kapılarını Açıyor</div>
-                            <div class="news-card-footer">Devamını Oku <i class="bi bi-arrow-right"></i></div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- DUYURULAR -->
-        <section class="announcements-section">
-            <div class="ann-header">
-                <div class="ann-header-left">
-                    <h2 class="ann-title">DUYURULAR</h2>
-                    <div class="ann-arrows">
-                        <button class="ann-arrow" onclick="scrollAnnouncements(-1)"><i class="bi bi-chevron-left"></i></button>
-                        <button class="ann-arrow" onclick="scrollAnnouncements(1)"><i class="bi bi-chevron-right"></i></button>
-                    </div>
-                </div>
-                <a href="#" class="ann-all-btn">
-                    <i class="bi bi-caret-right-fill"></i> TÜM DUYURULAR
-                </a>
-            </div>
-
-            <div class="ann-scroll-container">
-                <div class="ann-track" id="annTrack">
-                    <!-- Duyuru 1 -->
-                    <a href="#" class="ann-card">
-                        <div class="ann-date-box">
-                            <span class="ann-day">04</span>
-                            <span class="ann-month">Ağustos</span>
-                        </div>
-                        <div class="ann-content">
-                            <p class="ann-text">2026-2027 Eğitim-Öğretim Yılı Çift Anadal Programı Başvuruları Hakkında Duyuru</p>
-                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
-                        </div>
-                    </a>
-                    <!-- Duyuru 2 -->
-                    <a href="#" class="ann-card">
-                        <div class="ann-date-box">
-                            <span class="ann-day">03</span>
-                            <span class="ann-month">Ağustos</span>
-                        </div>
-                        <div class="ann-content">
-                            <p class="ann-text">2026-2027 Eğitim-Öğretim Yılı Güz Yarıyılı Kurum İçi ve Kurumlar Arası Yatay Geçiş Başvuruları</p>
-                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
-                        </div>
-                    </a>
-                    <!-- Duyuru 3 -->
-                    <a href="#" class="ann-card">
-                        <div class="ann-date-box">
-                            <span class="ann-day">01</span>
-                            <span class="ann-month">Ağustos</span>
-                        </div>
-                        <div class="ann-content">
-                            <p class="ann-text">2026-2027 Akademik Yılı Güz Yarıyılı Lisansüstü Programları Başvuru İlanı</p>
-                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
-                        </div>
-                    </a>
-                    <!-- Duyuru 4 -->
-                    <a href="#" class="ann-card">
-                        <div class="ann-date-box">
-                            <span class="ann-day">28</span>
-                            <span class="ann-month">Temmuz</span>
-                        </div>
-                        <div class="ann-content">
-                            <p class="ann-text">Yalova Üniversitesi 2026-2027 Akademik Takvimi Güncellenmiştir</p>
-                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
-                        </div>
-                    </a>
-                    <!-- Duyuru 5 -->
-                    <a href="#" class="ann-card">
-                        <div class="ann-date-box">
-                            <span class="ann-day">25</span>
-                            <span class="ann-month">Temmuz</span>
-                        </div>
-                        <div class="ann-content">
-                            <p class="ann-text">Sanat ve Tasarım Fakültesi 2026 Yılı Özel Yetenek Sınavı Kılavuzu ve Başvuru Tarihleri</p>
-                            <div class="ann-icon-wrap"><i class="bi bi-chevron-right"></i></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ETKİNLİKLER -->
-        <section class="events-section">
-            <div class="events-header">
-                <h2 class="events-title">ETKİNLİKLER</h2>
-                <a href="#" class="events-all-btn">
-                    <i class="bi bi-calendar-event"></i> TÜM ETKİNLİKLER
-                </a>
-            </div>
-
-            <div class="events-grid">
-                <!-- Etkinlik 1 -->
-                <div class="event-card">
-                    <img src="images/event1.png" alt="Etkinlik 1" class="event-img">
-                    <div class="event-title-badge">
-                        <h3>Akademik Açılış Töreni ve Konferansı</h3>
-                    </div>
-                    <div class="event-overlay">
-                        <h3 class="event-detail-title">Akademik Açılış Töreni ve Konferansı</h3>
-                        <ul class="event-info-list">
-                            <li><i class="bi bi-calendar3"></i> 15 Ekim 2026, Salı</li>
-                            <li><i class="bi bi-clock"></i> 10:00 - 13:00</li>
-                            <li><i class="bi bi-geo-alt"></i> Yalova Üniversitesi Rektörlük Konferans Salonu</li>
-                        </ul>
-                        <button class="event-action-btn"><i class="bi bi-info-circle"></i> Detaylı Bilgi</button>
-                    </div>
-                </div>
-
-                <!-- Etkinlik 2 -->
-                <div class="event-card">
-                    <img src="images/event2.png" alt="Etkinlik 2" class="event-img">
-                    <div class="event-title-badge">
-                        <h3>Teknoloji ve İnovasyon Zirvesi '26</h3>
-                    </div>
-                    <div class="event-overlay">
-                        <h3 class="event-detail-title">Teknoloji ve İnovasyon Zirvesi '26</h3>
-                        <ul class="event-info-list">
-                            <li><i class="bi bi-calendar3"></i> 20 Ekim 2026, Pazar</li>
-                            <li><i class="bi bi-clock"></i> 09:30 - 17:00</li>
-                            <li><i class="bi bi-geo-alt"></i> Mühendislik Fakültesi Binası</li>
-                        </ul>
-                        <button class="event-action-btn"><i class="bi bi-info-circle"></i> Detaylı Bilgi</button>
-                    </div>
-                </div>
-
-                <!-- Etkinlik 3 -->
-                <div class="event-card">
-                    <img src="images/event3.png" alt="Etkinlik 3" class="event-img">
-                    <div class="event-title-badge">
-                        <h3>Geleneksel Bahar Şenlikleri & Açık Hava Konseri</h3>
-                    </div>
-                    <div class="event-overlay">
-                        <h3 class="event-detail-title">Geleneksel Bahar Şenlikleri & Açık Hava Konseri</h3>
-                        <ul class="event-info-list">
-                            <li><i class="bi bi-calendar3"></i> 25 Mayıs 2027, Çarşamba</li>
-                            <li><i class="bi bi-clock"></i> 16:00 - 23:00</li>
-                            <li><i class="bi bi-geo-alt"></i> Merkez Kampüs Etkinlik Alanı</li>
-                        </ul>
-                        <button class="event-action-btn"><i class="bi bi-info-circle"></i> Detaylı Bilgi</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RAKAMLARLA YALOVA -->
-        <section class="stats-section">
-            <div class="stats-container">
-                
-                <!-- Sol Kısım -->
-                <div class="stats-left">
-                    <div class="stats-subtitle">RAKAMLARLA</div>
-                    <h2 class="stats-title">Yalova'nın <span>Gücü</span></h2>
-                    <p class="stats-desc">2008'den bu yana büyüyen akademik kadromuz, artan öğrenci sayımız ve güçlenen araştırma altyapımızla her yıl daha ileriye gidiyoruz.</p>
-                    <a href="#" class="stats-btn">TÜM İSTATİSTİKLER <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-                <!-- Sağ Kısım (Kartlar) -->
-                <div class="stats-right">
+            <!-- Sağ Kolon: İletişim Bilgileri -->
+            <div class="col-lg-5">
+                <div class="contact-info-box">
+                    <h3 class="contact-title">İletişim Bilgilerimiz</h3>
+                    <p class="contact-desc">Yalova Üniversitesi Rektörlüğü ve diğer idari birimlere aşağıdaki iletişim kanallarından ulaşabilirsiniz.</p>
                     
-                    <!-- Kart 1 (Kırmızı) -->
-                    <div class="stat-card red-theme">
-                        <div class="stat-deco"></div>
-                        <div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
-                        <div class="stat-number-wrapper">
-                            <span class="stat-number counter" data-target="18500">0</span>
-                            <span class="stat-plus">+</span>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div class="info-details">
+                                <strong>Adres</strong>
+                                <span>Yalova Üniversitesi Merkez Yerleşkesi, Çınarcık Yolu Üzeri, 77200, Merkez/Yalova</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-box"><i class="bi bi-telephone-fill"></i></div>
+                            <div class="info-details">
+                                <strong>Telefon</strong>
+                                <span>0226 815 50 00 (Santral)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-box"><i class="bi bi-envelope-fill"></i></div>
+                            <div class="info-details">
+                                <strong>E-Posta</strong>
+                                <span>iletisim@yalova.edu.tr</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-box"><i class="bi bi-safe-fill"></i></div>
+                            <div class="info-details">
+                                <strong>KEP Adresi</strong>
+                                <span>yalovauniversitesi@hs01.kep.tr</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="social-links mt-4">
+                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 15px;">Bizi Takip Edin</h4>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
                         </div>
-                        <div class="stat-label">ÖĞRENCİ SAYISI</div>
-                        <div class="stat-line"><div class="stat-line-fill"></div></div>
-                    </div>
-
-                    <!-- Kart 2 (Turkuaz) -->
-                    <div class="stat-card blue-theme">
-                        <div class="stat-deco"></div>
-                        <div class="stat-icon"><i class="bi bi-person-video3"></i></div>
-                        <div class="stat-number-wrapper">
-                            <span class="stat-number counter" data-target="650">0</span>
-                            <span class="stat-plus">+</span>
-                        </div>
-                        <div class="stat-label">AKADEMİK PERSONEL</div>
-                        <div class="stat-line"><div class="stat-line-fill"></div></div>
-                    </div>
-
-                    <!-- Kart 3 (Kırmızı) -->
-                    <div class="stat-card red-theme">
-                        <div class="stat-deco"></div>
-                        <div class="stat-icon"><i class="bi bi-bank2"></i></div>
-                        <div class="stat-number-wrapper">
-                            <span class="stat-number counter" data-target="14">0</span>
-                        </div>
-                        <div class="stat-label">FAKÜLTE & MYO</div>
-                        <div class="stat-line"><div class="stat-line-fill"></div></div>
-                    </div>
-
-                    <!-- Kart 4 (Turkuaz) -->
-                    <div class="stat-card blue-theme">
-                        <div class="stat-deco"></div>
-                        <div class="stat-icon"><i class="bi bi-award-fill"></i></div>
-                        <div class="stat-number-wrapper">
-                            <span class="stat-number counter" data-target="45000">0</span>
-                            <span class="stat-plus">+</span>
-                        </div>
-                        <div class="stat-label">MEZUN SAYISI</div>
-                        <div class="stat-line"><div class="stat-line-fill"></div></div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- KAMPÜSTEN KARELER -->
-        <section class="gallery-section">
-            <div class="gallery-header">
-                <h2 class="gallery-title">Kampüsten Kareler</h2>
-                <a href="galeri.html" class="gallery-all-btn">
-                    <i class="bi bi-images"></i> TÜM FOTOĞRAFLAR
-                </a>
-            </div>
-            <div class="gallery-accordion">
-                <!-- Foto 1 -->
-                <div class="gallery-item">
-                    <img src="images/galeri1.jpg" alt="Kampüs">
-                    <div class="gallery-content">
-                        <h3 class="gallery-item-title">Merkez Kampüs</h3>
-                        <p class="gallery-item-desc">DOĞA İLE İÇ İÇE</p>
-                    </div>
-                </div>
-                <!-- Foto 2 -->
-                <div class="gallery-item">
-                    <img src="images/galeri2.jpg" alt="Kütüphane">
-                    <div class="gallery-content">
-                        <h3 class="gallery-item-title">Merkez Kütüphane</h3>
-                        <p class="gallery-item-desc">7/24 BİLGİYE ERİŞİM</p>
-                    </div>
-                </div>
-                <!-- Foto 3 -->
-                <div class="gallery-item">
-                    <img src="images/galeri3.jpg" alt="Sosyal Yaşam">
-                    <div class="gallery-content">
-                        <h3 class="gallery-item-title">Sosyal Yaşam</h3>
-                        <p class="gallery-item-desc">CANLI VE DİNAMİK BİR ORTAM</p>
-                    </div>
-                </div>
-                <!-- Foto 4 -->
-                <div class="gallery-item">
-                    <img src="images/galeri4.jpg" alt="Laboratuvarlar">
-                    <div class="gallery-content">
-                        <h3 class="gallery-item-title">Modern Altyapı</h3>
-                        <p class="gallery-item-desc">GELECEĞİN TEKNOLOJİSİ</p>
-                    </div>
-                </div>
-                <!-- Foto 5 -->
-                <div class="gallery-item">
-                    <img src="images/galeri5.jpg" alt="Mezuniyet">
-                    <div class="gallery-content">
-                        <h3 class="gallery-item-title">Mezuniyet Sevinci</h3>
-                        <p class="gallery-item-desc">GELECEĞE İLK ADIM</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <footer class="site-footer">
+    <!-- HARİTA -->
+    <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=Yalova%20%C3%9Cniversitesi,%20Merkez%20Yerle%C5%9Fkesi&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+<footer class="site-footer">
             <div class="footer-container">
                 <!-- Sütun 1: İletişim -->
                 <div class="footer-col">
@@ -992,6 +591,7 @@
     <script src="js/chatbot.js"></script>
 </body>
 </html>
+
 
 
 
